@@ -28,7 +28,7 @@ public class CustomerDao {
                 .toCompletableFuture();
     }
 
-    public CompletableFuture<Customer> getCustomer(String name) {
+    public CompletableFuture<Customer> get(String name) {
         return sessionFactory.withSession(
                         // retrieve Customer by name
                         session -> session.createQuery("from Customer where name=:name order by name", Customer.class)

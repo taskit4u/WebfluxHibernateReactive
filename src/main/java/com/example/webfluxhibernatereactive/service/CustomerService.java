@@ -17,7 +17,7 @@ public class CustomerService {
 
     public Mono<CustomerDto> getCustomer(String name) {
         log.info("Search customer with name: {}", name);
-        var completableFutureOfCustomer = customerDao.getCustomer(name);
+        var completableFutureOfCustomer = customerDao.get(name);
         return Mono.fromFuture(completableFutureOfCustomer)
                 .cast(Customer.class)
                 .map(customer -> new CustomerDto(customer.getName(), customer.getSex(), customer.getAge()));

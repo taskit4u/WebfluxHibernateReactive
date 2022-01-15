@@ -54,6 +54,8 @@
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
         </dependency>
+
+        <!-- Allow authentication to PostgreSQL using SCRAM -->
         <dependency>
             <groupId>com.ongres.scram</groupId>
             <artifactId>client</artifactId>
